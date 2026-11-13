@@ -1,0 +1,189 @@
+/* ==========================================================
+   私信表单 / 评论提示 样式
+   与 Butterfly 主题卡片风格保持一致，支持深色模式
+   ========================================================== */
+
+.dm-app {
+  margin: 1.5rem 0;
+  padding: 1.6rem 1.8rem;
+  border-radius: 12px;
+  background: var(--card-bg, #fff);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+html[data-theme='dark'] .dm-app {
+  background: #20232a;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.dm-form .dm-field {
+  margin-bottom: 1.1rem;
+}
+
+.dm-form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #34495e;
+}
+
+html[data-theme='dark'] .dm-form label {
+  color: #d8dee9;
+}
+
+.dm-required {
+  color: #e74c3c;
+}
+
+.dm-form input[type='text'],
+.dm-form input[type='email'],
+.dm-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid #dfe6ec;
+  border-radius: 8px;
+  background: #fbfdff;
+  color: #333;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+html[data-theme='dark'] .dm-form input[type='text'],
+html[data-theme='dark'] .dm-form input[type='email'],
+html[data-theme='dark'] .dm-form textarea {
+  background: #2b2f36;
+  border-color: #3c434d;
+  color: #e6e6e6;
+}
+
+.dm-form input:focus,
+.dm-form textarea:focus {
+  outline: none;
+  border-color: #4facfe;
+  box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.18);
+  background: #fff;
+}
+
+html[data-theme='dark'] .dm-form input:focus,
+html[data-theme='dark'] .dm-form textarea:focus {
+  background: #2b2f36;
+}
+
+.dm-form textarea {
+  resize: vertical;
+  min-height: 130px;
+  line-height: 1.7;
+}
+
+/* 防垃圾机器人的隐藏字段 */
+.dm-honey {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
+
+.dm-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+}
+
+.dm-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.62rem 1.7rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4facfe 0%, #7b5cf0 100%);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.dm-submit:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.dm-submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.dm-hint {
+  color: #95a5a6;
+  font-size: 0.82rem;
+}
+
+.dm-status {
+  margin-top: 0.9rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  display: none;
+}
+
+.dm-status:not(:empty) {
+  display: block;
+}
+
+.dm-status--success {
+  color: #27ae60;
+}
+
+.dm-status--error {
+  color: #e74c3c;
+}
+
+.dm-status--info {
+  color: #7f8c8d;
+}
+
+.dm-alt {
+  margin: 1.2rem 0 0;
+  font-size: 0.85rem;
+  color: #95a5a6;
+}
+
+.dm-alt a {
+  color: #4facfe;
+}
+
+/* 评论未配置时显示的提示 */
+.dm-notice {
+  margin: 1.2rem 0;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  border: 1px dashed #b9c8d8;
+  background: rgba(79, 172, 254, 0.06);
+  color: #54728f;
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+
+html[data-theme='dark'] .dm-notice {
+  border-color: #44505f;
+  background: rgba(79, 172, 254, 0.08);
+  color: #b9c8d8;
+}
+
+.dm-notice a {
+  color: #4facfe;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .dm-app {
+    padding: 1.2rem 1.1rem;
+  }
+}

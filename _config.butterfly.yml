@@ -17,6 +17,7 @@ menu:
   归档: /archives/ || fas fa-archive
   分类: /categories/ || fas fa-folder-open
   标签: /tags/ || fas fa-tags
+  私信: /message/ || fas fa-envelope
   关于: /about/ || fas fa-heart
 
 # ---------- 社交图标 ----------
@@ -77,6 +78,34 @@ post_copyright:
   author_href:
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+# ---------- 评论系统（Giscus）----------
+# 基于 GitHub Discussions：零后端、免费、无广告。
+# 首次使用需完成 3 步（详见 README「评论与私信」）：
+#   1. 仓库 Settings → Features 勾选 Discussions
+#   2. 安装 giscus App：https://github.com/apps/giscus
+#   3. 打开 https://giscus.app 生成配置，把 data-category-id 填到下方 category_id
+comments:
+  use: Giscus
+  text: true
+  lazyload: false
+  count: false
+  card_post_count: false
+
+giscus:
+  repo: ZHshen1949/ZHshen1949.github.io
+  repo_id: R_kgDOVsxX4g
+  category_id: '' # ← 从 giscus.app 复制粘贴，如 DIC_kwDOVsxX4s4C...
+  light_theme: light
+  dark_theme: dark
+  js:
+  option:
+    data-mapping: pathname
+    data-strict: '0'
+    data-reactions-enabled: '1'
+    data-emit-metadata: '0'
+    data-input-position: top
+    data-lang: zh-CN
 
 # ---------- 页脚 ----------
 footer:
@@ -173,9 +202,9 @@ code_blocks:
 # ---------- 自定义注入（可放自己的 CSS / JS） ----------
 inject:
   head:
-    # - <link rel="stylesheet" href="/css/custom.css">
+    - <link rel="stylesheet" href="/css/dm.css">
   bottom:
-    # - <script src="/js/custom.js"></script>
+    - <script src="/js/custom.js" defer></script>
 
 # ---------- CDN ----------
 CDN:
