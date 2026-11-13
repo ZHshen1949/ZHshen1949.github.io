@@ -26,7 +26,7 @@ comments: false
 
 ### 联系方式
 
-- GitHub：https://github.com/yourname
-- Email：yourname@example.com
+- GitHub：https://github.com/zhshen260606-alt
+- 博客：https://zhshen260606-alt.github.io
 
 > 如果你也对技术和写作感兴趣，欢迎通过上面的方式联系我，一起交流。

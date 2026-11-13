@@ -16,7 +16,7 @@ timezone: 'Asia/Shanghai'
 ## 部署到 GitHub Pages 后请把 url 改成你自己的地址，例如：
 ##   个人主页仓库（仓库名 username.github.io）：https://username.github.io
 ##   普通仓库（仓库名 my-blog）：https://username.github.io/my-blog  （同时把 root 设为 /my-blog/）
-url: https://yourname.github.io
+url: https://zhshen260606-alt.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -98,6 +98,6 @@ theme: butterfly
 ## 使用前把 repo 换成你自己的仓库地址，并按 README 配置好 GitHub Token / SSH 密钥
 deploy:
   type: git
-  repo: https://github.com/yourname/yourname.github.io.git
+  repo: https://github.com/zhshen260606-alt/zhshen260606-alt.github.io.git
   branch: main
   message: 'Site updated: {{ now("YYYY-MM-DD HH:mm:ss") }}'

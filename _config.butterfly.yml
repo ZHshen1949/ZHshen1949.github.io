@@ -21,7 +21,7 @@ menu:
 
 # ---------- 社交图标 ----------
 social:
-  fab fa-github: https://github.com/yourname || GitHub || '#24292e'
+  fab fa-github: https://github.com/zhshen260606-alt || GitHub || '#24292e'
   fas fa-envelope: mailto:yourname@example.com || Email || '#4a7dbe'
   fas fa-rss: /atom.xml || RSS || '#ff9900'
 
@@ -107,7 +107,7 @@ aside:
       enable: true
       icon: fab fa-github
       text: 关注我
-      link: https://github.com/yourname
+      link: https://github.com/zhshen260606-alt
   card_announcement:
     enable: true
     content: 欢迎来到我的博客，这里记录技术笔记与生活随想。
