@@ -1,0 +1,179 @@
+# ==========================================================
+# Butterfly 主题个性化配置（覆盖主题默认值）
+# 主题默认配置：node_modules/hexo-theme-butterfly/_config.yml
+# 完整文档：https://butterfly.js.org/
+# ==========================================================
+
+# ---------- 导航栏 ----------
+nav:
+  logo:
+  display_title: true
+  display_post_title: true
+  fixed: false
+
+# 菜单（图标来自 Font Awesome）
+menu:
+  首页: / || fas fa-home
+  归档: /archives/ || fas fa-archive
+  分类: /categories/ || fas fa-folder-open
+  标签: /tags/ || fas fa-tags
+  关于: /about/ || fas fa-heart
+
+# ---------- 社交图标 ----------
+social:
+  fab fa-github: https://github.com/yourname || GitHub || '#24292e'
+  fas fa-envelope: mailto:yourname@example.com || Email || '#4a7dbe'
+  fas fa-rss: /atom.xml || RSS || '#ff9900'
+
+# ---------- 图片 ----------
+favicon: /img/favicon.svg
+
+avatar:
+  img: /img/avatar.svg
+  effect: false
+
+# 关闭所有顶部大图，换成纯色/渐变背景会更清爽（false 表示保留默认大图）
+disable_top_img: false
+default_top_img:
+index_img:
+archive_img:
+tag_img:
+category_img:
+footer_img: false
+
+cover:
+  index_enable: true
+  aside_enable: true
+  archives_enable: true
+  default_cover:
+
+# ---------- 首页 ----------
+# 副标题 + 打字机效果
+subtitle:
+  enable: true
+  effect: true
+  source: false
+  sub:
+    - '记录 · 思考 · 分享'
+    - 'Stay hungry, stay foolish.'
+    - '把踩过的坑，变成别人的路灯。'
+
+index_layout: 3
+index_post_content:
+  method: 2
+  length: 200
+
+# ---------- 文章页 ----------
+toc:
+  post: true
+  page: false
+  number: true
+  expand: false
+  style_simple: false
+  scroll_percent: true
+
+post_copyright:
+  enable: true
+  decode: false
+  author_href:
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+# ---------- 页脚 ----------
+footer:
+  owner:
+    enable: true
+    since: 2026
+  copyright:
+    enable: true
+    version: true
+  custom_text: '<span>本站由 Hexo 驱动 · 托管于 GitHub Pages</span>'
+
+# ---------- 侧边栏 ----------
+aside:
+  enable: true
+  hide: false
+  button: true
+  mobile: true
+  position: right
+  display:
+    archive: true
+    tag: true
+    category: true
+  card_author:
+    enable: true
+    description: '热爱技术，也热爱生活。'
+    button:
+      enable: true
+      icon: fab fa-github
+      text: 关注我
+      link: https://github.com/yourname
+  card_announcement:
+    enable: true
+    content: 欢迎来到我的博客，这里记录技术笔记与生活随想。
+  card_recent_post:
+    enable: true
+    limit: 5
+  card_categories:
+    enable: true
+    limit: 8
+  card_tags:
+    enable: true
+    limit: 40
+
+# ---------- 深色模式 ----------
+darkmode:
+  enable: true
+  button: true
+  # 跟随系统：1 表示跟随系统设置
+  autoChangeMode: 1
+  start:
+  end:
+
+# ---------- 本地搜索 ----------
+# 依赖插件 hexo-generator-searchdb（已在 package.json 中），会生成 search.xml
+search:
+  use: local_search
+  placeholder: 搜索文章…
+  local_search:
+    preload: false
+    top_n_per_article: 1
+    unescape: false
+    pagination:
+      enable: false
+      hitsPerPage: 8
+
+# ---------- 全局 ----------
+anchor:
+  auto_update: false
+  click_to_scroll: false
+
+copy:
+  enable: true
+  copyright:
+    enable: false
+    limit_count: 150
+
+# ---------- 代码块 ----------
+code_blocks:
+  theme: light
+  macStyle: false
+  height_limit: false
+  word_wrap: false
+  copy: true
+  language: true
+  shrink: false
+  fullpage: false
+
+# ---------- 自定义注入（可放自己的 CSS / JS） ----------
+inject:
+  head:
+    # - <link rel="stylesheet" href="/css/custom.css">
+  bottom:
+    # - <script src="/js/custom.js"></script>
+
+# ---------- CDN ----------
+CDN:
+  internal_provider: local
+  third_party_provider: jsdelivr
+  version: true
