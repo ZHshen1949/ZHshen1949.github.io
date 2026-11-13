@@ -96,7 +96,7 @@ comments:
 giscus:
   repo: ZHshen1949/ZHshen1949.github.io
   repo_id: R_kgDOVsxX4g
-  category_id: '' # ← 从 giscus.app 复制粘贴，如 DIC_kwDOVsxX4s4C...
+  category_id: DIC_kwDOVsxX4s4DLB3w # Announcements 分类
   light_theme: light
   dark_theme: dark
   js:
