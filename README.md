@@ -201,6 +201,17 @@ Windows PowerShell 执行策略限制，执行
 **7. 图片在本地正常、线上 404？**
 Linux 构建环境区分大小写，检查路径大小写；推荐以 `/` 开头的绝对路径引用 `source/img/` 下的图片。
 
+**8. `git push` 报 `Failed to connect to github.com port 443`？**
+国内网络访问 GitHub 偶发被重置，重试通常即可恢复；若持续失败，可走本地代理推送：
+
+```bash
+# 把端口换成你代理软件的 HTTP 端口（Clash 常见 7890 / 7897）
+git -c http.proxy=http://127.0.0.1:7897 push
+
+# 想以后默认走代理（用完可用 --unset 移除）
+git config --global http.https://github.com.proxy http://127.0.0.1:7897
+```
+
 ## 维护建议
 
 - 源码推送到 GitHub 本身就是备份；不必提交 `node_modules/` 与 `public/`。
