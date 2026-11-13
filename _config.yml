@@ -93,6 +93,21 @@ ignore:
 ## 主题配置位于根目录 _config.butterfly.yml
 theme: butterfly
 
+# ---------- 订阅（RSS）----------
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  content: true
+  hub:
+
+# ---------- 站点地图 ----------
+sitemap:
+  path: sitemap.xml
+  rel: false
+  tags: true
+  categories: true
+
 # ---------- 部署 ----------
 ## 方式二：本地一条命令部署（方式一为 GitHub Actions，见 .github/workflows/deploy.yml）
 ## 使用前把 repo 换成你自己的仓库地址，并按 README 配置好 GitHub Token / SSH 密钥

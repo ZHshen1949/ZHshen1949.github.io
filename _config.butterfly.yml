@@ -89,6 +89,12 @@ footer:
     version: true
   custom_text: '<span>本站由 Hexo 驱动 · 托管于 GitHub Pages</span>'
 
+# ---------- 404 页面 ----------
+error_404:
+  enable: true
+  subtitle: '页面走丢了，回首页看看吧'
+  background: /img/error-page.png
+
 # ---------- 侧边栏 ----------
 aside:
   enable: true
