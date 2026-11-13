@@ -138,7 +138,7 @@ npm install hexo-deployer-git
 ```yaml
 deploy:
   type: git
-  repo: https://github.com/yourname/yourname.github.io.git
+  repo: https://github.com/ZHshen1949/ZHshen1949.github.io.git
   branch: main
 ```
 

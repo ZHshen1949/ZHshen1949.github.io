@@ -1,6 +1,6 @@
 # ZHshen 的个人博客
 
-线上地址：**https://zhshen260606-alt.github.io** ｜ 源码仓库：**https://github.com/zhshen260606-alt/zhshen260606-alt.github.io**
+线上地址：**https://zhshen1949.github.io** ｜ 源码仓库：**https://github.com/ZHshen1949/ZHshen1949.github.io**
 
 一个基于 **Hexo** + **Butterfly** 主题、托管在 **GitHub Pages** 上的个人博客。
 本地写作 → 推送到 GitHub → GitHub Actions 自动构建发布，全程零成本。

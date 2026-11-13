@@ -26,7 +26,7 @@ comments: false
 
 ### 联系方式
 
-- GitHub：https://github.com/zhshen260606-alt
-- 博客：https://zhshen260606-alt.github.io
+- GitHub：https://github.com/ZHshen1949
+- 博客：https://zhshen1949.github.io
 
 > 如果你也对技术和写作感兴趣，欢迎通过上面的方式联系我，一起交流。
