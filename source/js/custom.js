@@ -130,4 +130,109 @@
         '<div class="dm-notice">评论系统即将上线，想留言可以先 <a href="/message/">给我发一条私信</a>。</div>'
     }
   }, 200)
+
+  /* ---------------- 微信联系弹窗 ---------------- */
+  var WECHAT = {
+    id: '15605021185',
+    // 可选：把微信二维码图片放到 source/img/wechat-qr.png，即可在弹窗中展示
+    qr: '/img/wechat-qr.png'
+  }
+
+  var wechatModal = null
+
+  function buildWechatModal () {
+    if (wechatModal) return wechatModal
+
+    var mask = document.createElement('div')
+    mask.className = 'dm-modal-mask'
+    mask.id = 'dm-wechat-modal'
+    mask.innerHTML =
+      '<div class="dm-modal" role="dialog" aria-modal="true" aria-label="添加我的微信">' +
+      '  <button class="dm-modal-close" type="button" aria-label="关闭">×</button>' +
+      '  <div class="dm-modal-icon"><i class="fab fa-weixin"></i></div>' +
+      '  <h3 class="dm-modal-title">添加我的微信</h3>' +
+      '  <p class="dm-modal-desc">打开微信 → 添加朋友 → 搜索微信号 / 手机号</p>' +
+      '  <div class="dm-wechat-id">' +
+      '    <span id="dm-wechat-value">' + WECHAT.id + '</span>' +
+      '    <button class="dm-copy" id="dm-copy-wechat" type="button">复制</button>' +
+      '  </div>' +
+      '  <div class="dm-wechat-qr" hidden><img alt="微信二维码"></div>' +
+      '  <p class="dm-modal-tip">添加时请备注「博客」，方便我通过。</p>' +
+      '</div>'
+
+    mask.addEventListener('click', function (e) {
+      if (e.target === mask || (e.target.closest && e.target.closest('.dm-modal-close'))) {
+        closeWechat()
+      }
+    })
+
+    var copyBtn = mask.querySelector('#dm-copy-wechat')
+    copyBtn.addEventListener('click', function () {
+      var text = WECHAT.id
+      function done () {
+        copyBtn.textContent = '已复制'
+        setTimeout(function () { copyBtn.textContent = '复制' }, 2000)
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback)
+      } else {
+        fallback()
+      }
+      function fallback () {
+        var ta = document.createElement('textarea')
+        ta.value = text
+        ta.style.position = 'fixed'
+        ta.style.opacity = '0'
+        document.body.appendChild(ta)
+        ta.select()
+        try { document.execCommand('copy'); done() } catch (e) { copyBtn.textContent = '请手动复制' }
+        document.body.removeChild(ta)
+      }
+    })
+
+    var qrWrap = mask.querySelector('.dm-wechat-qr')
+    var qrImg = qrWrap.querySelector('img')
+    qrImg.onload = function () { qrWrap.hidden = false }
+    qrImg.onerror = function () { qrWrap.hidden = true }
+    qrImg.src = WECHAT.qr
+
+    document.body.appendChild(mask)
+    wechatModal = mask
+    return mask
+  }
+
+  function openWechat () {
+    var mask = buildWechatModal()
+    mask.classList.add('is-open')
+    document.body.classList.add('dm-modal-open')
+  }
+
+  function closeWechat () {
+    if (!wechatModal) return
+    wechatModal.classList.remove('is-open')
+    document.body.classList.remove('dm-modal-open')
+  }
+
+  document.addEventListener('click', function (e) {
+    var target = e.target
+    if (!target || !target.closest) return
+    var trigger = target.closest('a[title="WeChat"], a[href$="#wechat"]')
+    if (trigger) {
+      e.preventDefault()
+      openWechat()
+    }
+  })
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeWechat()
+  })
+
+  // 支持分享链接 https://zhshen1949.github.io/#wechat 直接打开弹窗
+  if (window.location.hash === '#wechat') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', openWechat)
+    } else {
+      openWechat()
+    }
+  }
 })()

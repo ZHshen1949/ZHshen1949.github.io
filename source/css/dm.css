@@ -187,3 +187,144 @@ html[data-theme='dark'] .dm-notice {
     padding: 1.2rem 1.1rem;
   }
 }
+
+/* ==========================================================
+   微信联系弹窗
+   ========================================================== */
+
+body.dm-modal-open {
+  overflow: hidden;
+}
+
+.dm-modal-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.dm-modal-mask.is-open {
+  display: flex;
+}
+
+.dm-modal {
+  position: relative;
+  width: 100%;
+  max-width: 330px;
+  padding: 28px 24px 22px;
+  border-radius: 16px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+  animation: dm-pop 0.22s ease;
+}
+
+html[data-theme='dark'] .dm-modal {
+  background: #23272e;
+  color: #e6e6e6;
+}
+
+@keyframes dm-pop {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.dm-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: 0;
+  background: transparent;
+  font-size: 22px;
+  line-height: 1;
+  color: #99a3ad;
+  cursor: pointer;
+}
+
+.dm-modal-close:hover {
+  color: #555;
+}
+
+.dm-modal-icon {
+  width: 64px;
+  height: 64px;
+  margin: 4px auto 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(7, 193, 96, 0.12);
+  color: #07c160;
+  font-size: 32px;
+}
+
+.dm-modal-title {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.dm-modal-desc {
+  margin: 0 0 14px;
+  font-size: 0.85rem;
+  color: #7f8c8d;
+}
+
+.dm-wechat-id {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px dashed #d5e0e8;
+  background: #f5f7f9;
+  font-family: Consolas, Monaco, monospace;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+}
+
+html[data-theme='dark'] .dm-wechat-id {
+  background: #2b3038;
+  border-color: #3c434d;
+}
+
+.dm-copy {
+  border: 0;
+  border-radius: 6px;
+  padding: 5px 12px;
+  background: #07c160;
+  color: #fff;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.dm-copy:hover {
+  opacity: 0.85;
+}
+
+.dm-wechat-qr {
+  margin-top: 14px;
+}
+
+.dm-wechat-qr img {
+  width: 160px;
+  height: 160px;
+  border-radius: 8px;
+}
+
+.dm-modal-tip {
+  margin: 14px 0 0;
+  font-size: 0.78rem;
+  color: #95a5a6;
+}

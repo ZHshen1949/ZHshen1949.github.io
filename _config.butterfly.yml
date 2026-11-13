@@ -24,6 +24,7 @@ menu:
 social:
   fab fa-github: https://github.com/ZHshen1949 || GitHub || '#24292e'
   fas fa-envelope: mailto:zhshen260606@gmail.com || Email || '#4a7dbe'
+  fab fa-weixin: /about/ || WeChat || '#07c160'
   fas fa-rss: /atom.xml || RSS || '#ff9900'
 
 # ---------- 图片 ----------
