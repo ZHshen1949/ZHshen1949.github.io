@@ -22,7 +22,6 @@ menu:
 # ---------- 社交图标 ----------
 social:
   fab fa-github: https://github.com/ZHshen1949 || GitHub || '#24292e'
-  fas fa-envelope: mailto:yourname@example.com || Email || '#4a7dbe'
   fas fa-rss: /atom.xml || RSS || '#ff9900'
 
 # ---------- 图片 ----------
