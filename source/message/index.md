@@ -33,8 +33,8 @@ description: 给站长发一条只有我能看到的私信。
 
 <script>
   window.DM_CONFIG = {
-    // ← 把这里改成你的邮箱，私信会通过 FormSubmit 转发到该邮箱
-    ownerEmail: '',
+    // 私信会通过 FormSubmit 转发到该邮箱
+    ownerEmail: 'zhshen260606@gmail.com',
     // 'formsubmit'：网页内直接发送（推荐）；'mailto'：打开本地邮件客户端
     mode: 'formsubmit'
   }
