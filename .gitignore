@@ -9,3 +9,13 @@ public/
 .deploy*/
 _multiconfig.yml
 .vscode/
+
+# Hexo Pro 后台管理插件本地生成的数据（勿提交）
+data/
+.hexo-pro/
+blogInfoList.json
+todos.json
+visit_stats.json
+deploy_config.json
+_yaml_templates/
+_admin-config.yml

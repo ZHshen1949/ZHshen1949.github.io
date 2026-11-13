@@ -16,6 +16,7 @@
 | hexo-generator-searchdb | 本地搜索（`search.json`） |
 | [Giscus](https://giscus.app/) | 评论系统（基于 GitHub Discussions，零后端） |
 | [FormSubmit](https://formsubmit.co/) | 私信表单转发到站长邮箱（零后端） |
+| [Hexo Pro](https://github.com/wuzheng228/hexo-pro) | 本地可视化后台管理（写文章/改配置/部署） |
 
 ## 快速开始（本地）
 
@@ -209,6 +210,25 @@ window.DM_CONFIG = {
 
 > 可选升级：若想要「网页内实时聊天」式的私信，Butterfly 还内置 Crisp / Tidio 等客服聊天组件，
 > 需注册对应服务后在 `_config.butterfly.yml` 中配置，国内访问稳定性需自行评估。
+
+## 后台管理：Hexo Pro（仅本地）
+
+已安装 [Hexo Pro](https://github.com/wuzheng228/hexo-pro) 可视化后台，可以在网页里写文章、管理页面、改配置、管理图床、一键部署。
+
+```bash
+npm run server
+# 浏览器打开 http://localhost:4000/pro/ 登录
+```
+
+首次使用已在本机注册管理员账号（保存在本地 `data/users.db`）；忘记密码可删掉 `data/users.db` 后重启服务重新注册，或使用登录页的「忘记密码」（需先设置安全问题）。
+
+> ⚠️ 安全提醒：
+> - 后台只在 `hexo server` 运行时可用，**仅监听本机**，不要把 4000 端口暴露到公网（面板无 HTTPS，且能直接改项目文件）。
+> - 账号数据存在本地 `data/`（已加入 `.gitignore`，不会上传到 GitHub）。
+> - 面板会直接修改项目里的文章与 `_config*.yml`，操作前建议先 `git commit`，方便随时回滚。
+> - 部署到 GitHub Pages 的仍是纯静态文件，**后台不会随站点一起发布**。
+
+其他本地文件说明：`data/`、`blogInfoList.json`、`todos.json`、`visit_stats.json`、`deploy_config.json`、`_yaml_templates/`、`_admin-config.yml`、`.hexo-pro/` 都是插件运行时生成的数据，已在 `.gitignore` 中忽略。
 
 ## 常用命令速查
 
